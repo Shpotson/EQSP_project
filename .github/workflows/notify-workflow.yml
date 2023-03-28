@@ -9,8 +9,8 @@ jobs:
   messageWhatsApp:
     runs-on: ubuntu-latest
     steps:
-      - uses: appleboy/telegram-action@master
       - name: send custom message
+      - uses: appleboy/telegram-action@master
         with:
           to: ${{ secrets.TELEGRAM_CHAT }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
