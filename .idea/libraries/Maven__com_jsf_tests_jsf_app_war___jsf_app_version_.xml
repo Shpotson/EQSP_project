@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.jsf.tests:jsf-app:war:${jsf-app.version}">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/jsf/tests/jsf-app/${jsf-app.version}/jsf-app-${jsf-app.version}.war!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/jsf/tests/jsf-app/${jsf-app.version}/jsf-app-${jsf-app.version}-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/jsf/tests/jsf-app/${jsf-app.version}/jsf-app-${jsf-app.version}-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

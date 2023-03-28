@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: org.jboss.as:jboss-as-arquillian-container-remote:${jboss.version}">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/jboss/as/jboss-as-arquillian-container-remote/${jboss.version}/jboss-as-arquillian-container-remote-${jboss.version}.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/org/jboss/as/jboss-as-arquillian-container-remote/${jboss.version}/jboss-as-arquillian-container-remote-${jboss.version}-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/jboss/as/jboss-as-arquillian-container-remote/${jboss.version}/jboss-as-arquillian-container-remote-${jboss.version}-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
