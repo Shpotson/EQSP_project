@@ -21,7 +21,5 @@
     <orderEntry type="library" scope="TEST" name="Maven: org.junit.jupiter:junit-jupiter-engine:5.9.2" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.junit.platform:junit-platform-engine:1.9.2" level="project" />
     <orderEntry type="library" name="Maven: org.cactoos:cactoos:0.55.0" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: org.jboss.as:jboss-as-arquillian-container-remote:${jboss.version}" level="project" />
-    <orderEntry type="library" name="Maven: com.jsf.tests:jsf-app:war:${jsf-app.version}" level="project" />
   </component>
 </module>
