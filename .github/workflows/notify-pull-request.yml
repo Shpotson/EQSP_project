@@ -1,0 +1,17 @@
+name: Notifier
+
+on:
+  pull_request:
+    branches: [ main ]
+
+jobs:
+
+  messageWhatsApp:
+    runs-on: ubuntu-latest
+    steps:
+      - name: send custom message
+        uses: appleboy/telegram-action@master
+        with:
+          to: ${{ secrets.TELEGRAM_CHAT }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          message: "New Pull request in ${{ vars.GITHUB_REPOSITORY }} are incoming"
