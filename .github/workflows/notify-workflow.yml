@@ -1,4 +1,4 @@
-name: Notifier
+name: Push Notifier
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
 
 jobs:
 
-  messageWhatsApp:
+  messageTelegramm:
     runs-on: ubuntu-latest
     steps:
       - name: send custom message
