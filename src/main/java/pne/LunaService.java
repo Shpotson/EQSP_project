@@ -2,7 +2,7 @@ package pne;
 
 class LunaService {
     private LunaService(){}
-    static boolean isValidLuhn(char value[]) {
+    static boolean isValidLuhn(char[] value) {
         int sum = Character.getNumericValue(value[value.length - 1]);
         int parity = value.length % 2;
         for (int i = value.length - 2; i >= 0; i--) {

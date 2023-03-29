@@ -6,10 +6,10 @@ import java.util.stream.IntStream;
 
 class ArraySlice {
 
-    private int _begin;
-    private int _end;
-    private int[] _exclude;
-    private char[] _slice;
+    private final int _begin;
+    private final int _end;
+    private final int[] _exclude;
+    private final char[] _slice;
     ArraySlice(int begin, int end, List<Integer> exclude, List<Character> slice){
         _begin = begin;
         _end = end;
@@ -30,7 +30,7 @@ class ArraySlice {
     }
 
     boolean IsExcluded(int index){
-        return !IntStream.of(_exclude).anyMatch(x -> x == index);
+        return IntStream.of(_exclude).noneMatch(x -> x == index);
     }
 
 }

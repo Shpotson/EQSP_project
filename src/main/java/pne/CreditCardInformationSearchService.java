@@ -35,11 +35,11 @@ class CreditCardInformationSearchService {
 
     private CreditCardInformationSearchService(){}
 
-    static List<ArraySlice> Search(char text[]){
-        List<ArraySlice> output = new ArrayList<ArraySlice>();
+    static List<ArraySlice> Search(char[] text){
+        List<ArraySlice> output = new ArrayList<>();
 
-        List<Character> tempCardInfo = new ArrayList<Character>();
-        List<Integer> tempExcludeInfo = new ArrayList<Integer>();
+        List<Character> tempCardInfo = new ArrayList<>();
+        List<Integer> tempExcludeInfo = new ArrayList<>();
 
         for(int i = 0; i < text.length; i++){
             if (text[i] ==  ' ' ){
@@ -87,110 +87,85 @@ class CreditCardInformationSearchService {
     }
 
     static private boolean CheckIfLooksLikeA16Card(List<Character> cardInfoToCheck){
-        if (IsMastercard16(cardInfoToCheck)
+        return IsMastercard16(cardInfoToCheck)
                 | IsVisa16(cardInfoToCheck)
                 | IsDiscover16(cardInfoToCheck)
-                | IsJcb16(cardInfoToCheck))
-            return true;
-        return false;
+                | IsJcb16(cardInfoToCheck);
     }
     static private boolean CheckIfLooksLikeA15Card(List<Character> cardInfoToCheck){
-        if (IsAmex15(cardInfoToCheck)
+        return IsAmex15(cardInfoToCheck)
                 | IsEnroute15(cardInfoToCheck)
-                | IsJcb15(cardInfoToCheck))
-            return true;
-        return false;
+                | IsJcb15(cardInfoToCheck);
     }
 
     static private boolean IsMastercard16(List<Character> cardInfoToCheck){
-        char buffer[] = {
+        char[] buffer = {
                 cardInfoToCheck.get(0),
                 cardInfoToCheck.get(1),};
         int number = Integer.parseInt(new String(buffer));
 
-        if (number >= mastercardFirstTwoDigitsMin && number <= mastercardFirstTwoDigitsMax){
-            return true;
-        }
-        return false;
+        return number >= mastercardFirstTwoDigitsMin && number <= mastercardFirstTwoDigitsMax;
     }
 
     static private boolean IsVisa16(List<Character> cardInfoToCheck){
-        char buffer[] = {
+        char[] buffer = {
                 cardInfoToCheck.get(0)};
         int number = Integer.parseInt(new String(buffer));
 
-        if (number == visaFirstOneDigit){
-            return true;
-        }
-        return false;
+        return number == visaFirstOneDigit;
     }
 
     static private boolean IsDiscover16(List<Character> cardInfoToCheck){
-        char buffer[] = {
+        char[] buffer = {
                 cardInfoToCheck.get(0),
                 cardInfoToCheck.get(1),
                 cardInfoToCheck.get(2),
                 cardInfoToCheck.get(3)};
         int number = Integer.parseInt(new String(buffer));
 
-        if (number == discoverFirstFourDigits){
-            return true;
-        }
-        return false;
+        return number == discoverFirstFourDigits;
     }
 
     static private boolean IsJcb16(List<Character> cardInfoToCheck){
-        char buffer[] = {
+        char[] buffer = {
                 cardInfoToCheck.get(0),
                 cardInfoToCheck.get(1),
                 cardInfoToCheck.get(2),
                 cardInfoToCheck.get(3)};
         int number = Integer.parseInt(new String(buffer));
 
-        if (IntStream.of(jcb16FirstFourDigits).anyMatch(x -> x == number)){
-            return true;
-        }
-        return false;
+        return IntStream.of(jcb16FirstFourDigits).anyMatch(x -> x == number);
     }
 
     static private boolean IsAmex15(List<Character> cardInfoToCheck){
-        char buffer[] = {
+        char[] buffer = {
                 cardInfoToCheck.get(0),
                 cardInfoToCheck.get(1)};
         int number = Integer.parseInt(new String(buffer));
 
-        if (IntStream.of(amexFirstTwoDigits).anyMatch(x -> x == number)){
-            return true;
-        }
-        return false;
+        return IntStream.of(amexFirstTwoDigits).anyMatch(x -> x == number);
     }
 
     static private boolean IsEnroute15(List<Character> cardInfoToCheck){
-        char buffer[] = {
+        char[] buffer = {
                 cardInfoToCheck.get(0),
                 cardInfoToCheck.get(1),
                 cardInfoToCheck.get(2),
                 cardInfoToCheck.get(3)};
         int number = Integer.parseInt(new String(buffer));
 
-        if (IntStream.of(enrouteFirstFourDigits).anyMatch(x -> x == number)){
-            return true;
-        }
-        return false;
+        return IntStream.of(enrouteFirstFourDigits).anyMatch(x -> x == number);
     }
 
     static private boolean IsJcb15(List<Character> cardInfoToCheck){
-        char buffer[] = {
+        char[] buffer = {
                 cardInfoToCheck.get(0),
                 cardInfoToCheck.get(1),
                 cardInfoToCheck.get(2),
                 cardInfoToCheck.get(3)};
         int number = Integer.parseInt(new String(buffer));
 
-        if (IntStream.of(jcb15FirstFourDigits).anyMatch(x -> x == number)){
-            return true;
-        }
-        return false;
+        return IntStream.of(jcb15FirstFourDigits).anyMatch(x -> x == number);
     }
 
 }

@@ -1,6 +1,5 @@
 package pne;
 import java.util.List;
-import org.cactoos.*;
 
 public final class Ccsrch {
 
