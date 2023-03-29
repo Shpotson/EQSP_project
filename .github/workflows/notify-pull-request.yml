@@ -1,4 +1,4 @@
-name: Notifier
+name: Pull Request Notifier
 
 on:
   pull_request:
@@ -6,7 +6,7 @@ on:
 
 jobs:
 
-  messageWhatsApp:
+  messageTelegram:
     runs-on: ubuntu-latest
     steps:
       - name: send custom message
@@ -14,4 +14,4 @@ jobs:
         with:
           to: ${{ secrets.TELEGRAM_CHAT }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
-          message: "New Pull request in ${{ vars.GITHUB_REPOSITORY }} are incoming"
+          message: "New Pull request in ${{ github.repository }} are incoming"
