@@ -1,4 +1,4 @@
-name: Jacoco Distributed Exec and Aggregation
+name: JUnit Jacoco
 
 on:
   push:
@@ -16,4 +16,4 @@ jobs:
           java-version: '11'
       - name: Run tests
         run: |
-          mvn 'mvn clean verify
+          mvn clean verify
